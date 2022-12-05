@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Quick Sort</title>
+	<link rel="icon" href="../../images/dmc.ico">
+
 	<style>
 		html, * {
 			box-sizing: border-box;
@@ -12,13 +14,15 @@
 
 		body {
 			text-align: center;
+			background: url("../../images/dmcbg.png");
 		}
 
 		.grid {
 			width: 1000px;
 			position: relative;
 			height: 400px;
-			background: #e6f0ff;
+			opacity: 0.5;
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
 			margin: 40px auto;
 			display: flex;
 			flex-wrap: wrap;
@@ -31,7 +35,9 @@
 			font-family: ubuntu;
 			font-weight: bolder;
 			font-size: 20px;
-			color: lightskyblue;
+			background: linear-gradient(to right, #1cb5e0 0%, #000851);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
 		}
 
 		.arr__controllers {
@@ -95,13 +101,15 @@
 		}
 
 		.arr__visualize {
-			color: lightskyblue;
-			background-color: black;
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
+			color: lightseagreen;
 			padding : 10px;
 		}
 
 		.arr__controllers > select {
 			padding: 10px;
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
+			color: lightseagreen;
 		}
 
 	</style>
@@ -195,7 +203,7 @@
 
 
 	function clear(x1=0, y1=0, width=max_width, height=max_height) {
-			ctx.fillStyle = '#e6f0ff';
+		ctx.fillStyle = 'rgb(58, 96, 115)';
 			ctx.fillRect(x1, y1, width, height)
 	}
 

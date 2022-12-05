@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Merge Sort</title>
+	<link rel="icon" href="../../images/dmc.ico">
+
 	<style>
 		html, * {
 			box-sizing: border-box;
@@ -12,17 +14,19 @@
 
 		body {
 			text-align: center;
+			background: url("../../images/dmcbg.png");
 		}
 
 		.grid {
 			width: 1000px;
 			position: relative;
 			height: 400px;
-			background: #e6f0ff;
+			opacity: 0.5;
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
 			margin: 40px auto;
 			display: flex;
 			flex-wrap: wrap;
-			outline: 1px solid lightblue;
+			outline: 1px solid white;
 		}
 
 		p, p:nth-child(1) {
@@ -30,8 +34,10 @@
 			text-align: center;
 			font-family: ubuntu;
 			font-weight: bolder;
-			font-size: 20px;
-			color: lightskyblue;
+			font-size: 22px;
+			background: linear-gradient(to right, #1cb5e0 0%, #000851);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
 		}
 
 		.arr__controllers {
@@ -95,13 +101,15 @@
 		}
 
 		.arr__visualize {
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
+			color: lightseagreen;
 			padding : 10px;
-			background-color: black;
-			color: lightskyblue;
 		}
 
 		.arr__controllers > select {
 			padding: 10px;
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
+			color: lightseagreen;
 		}
 
 	</style>
@@ -109,7 +117,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
-	<p>MERGE SORT</p>
+	<p>Merge Sort</p>
 	<canvas class='grid' width='1000',height='400px'>
 		
 	</canvas>
@@ -194,7 +202,8 @@
 
 
 	function clear(x1=0, y1=0, width=max_width, height=max_height) {
-			ctx.fillStyle = '#e6f0ff';
+		ctx.fillStyle = 'rgb(58, 96, 115)';
+
 			ctx.fillRect(x1, y1, width, height)
 	}
 
@@ -258,7 +267,7 @@
 		arr.forEach((e, i) => {
 			ctx.fillStyle = "black";	
 			ctx.fillRect(i * rect.width + i + 10, 15, rect.width, rect.height - 4);
-			ctx.fillStyle = 'lightskyblue';
+			ctx.fillStyle = 'white';
 			ctx.font = 'bold 15px ubuntu'
 			ctx.fillText(`${e}`, i * rect.width + i + rect.width/2 + 10, rect.height + 5)
 			ctx.fillStyle = 'black';
@@ -285,7 +294,7 @@
 				ctx.fillStyle = "gray";
 			}
 			ctx.fillRect(i * rect.width + i + 10, max_height/2, rect.width, rect.height);
-			ctx.fillStyle = 'lightskyblue';
+			ctx.fillStyle = 'white';
 			ctx.font = 'bold 15px ubuntu'	
 			ctx.fillText(`${e}`, i * rect.width + i + rect.width/2 + 10, max_height/2 + rect.height * (3/4))
 			ctx.fillStyle = 'black';
@@ -297,7 +306,7 @@
 		}
 
 		p.forEach((e, i) => {
-			ctx.fillStyle = "black";	
+			ctx.fillStyle = "red";	
 			ctx.fillRect(i * rect.width + i + 10, max_height/2 + 2 * rect.height, rect.width, rect.height * (3 / 4));
 			ctx.fillStyle = 'yellow';
 			ctx.font = 'bold 15px ubuntu'

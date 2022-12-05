@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Graph</title>
+	<title>Dijkstra's Algorithm</title>
+	<link rel="icon" href="../../images/dmc.ico">
+
 	<style>
 		html, * {
 			box-sizing: border-box;
@@ -9,9 +11,13 @@
 			padding: 0;
 		}
 
+		body {
+			text-align: center;
+			background: url("../../images/dmcbg.png");
+		}
 		.grid {
 			position: relative;
-			background: lightgreen;
+			opacity: 0.5;
 			margin: 10px auto;
 			display: flex;
 			flex-wrap: wrap;
@@ -25,7 +31,6 @@
 			display: flex;
 			justify-content: space-around;
 			font-size: 20px;
-			
 		}
 
 		p > span {
@@ -33,10 +38,9 @@
 			color: lightskyblue;
 		}
 		.head__button {
-			color: lightskyblue;
-			background-color: black
-			;
 			padding: 5px 30px;
+			background: black;
+			color: lightskyblue;
 		}
 
 
@@ -141,7 +145,7 @@
 		start = 300;
 		ctx.fillStyle = "black";
 		ctx.fillRect(start + i * width + 10*i, ctx.canvas.height - height - 4, width, height);
-		ctx.fillStyle = "black";
+		ctx.fillStyle = "white";
 		ctx.font = "bolder 18px sans-serif";
 		weight = val[i];
 		if(+weight == 1000) weight = "Inf";
@@ -197,12 +201,12 @@
 		cor.push([x, y]);
 		ctx.stroke();
 		ctx.closePath();
-		ctx.fillStyle = "black";
+		ctx.fillStyle = "white";
 		ctx.font = "bolder 25px ubuntu";
 		ctx.fillText(edge[i][j], (cor[0][0] + cor[1][0]) / 2, (cor[0][1] + cor[1][1]) / 2 - 4);
 	}
 
-	function createBox(i, color=" #e6f0ff") {
+	function createBox(i, color="red") {
 		ctx.fillStyle = color
 		ctx.moveTo(each[i] * dx, i* dy);
 		let x = each[i] * dx + (dimension / 2) + rel;
@@ -211,18 +215,19 @@
 		ctx.fill();
 	}
 
-	function createText(i, color=" #e6f0ff") {
+	function createText(i, color="lightskyblue") {
 		ctx.moveTo(each[i] * dx, i* dy);
 		let x = each[i] * dx + (dimension / 2) + rel;
 		let y = i * dy + dimension / 2 + rel;
-		ctx.fillStyle = 'black';
+		ctx.fillStyle = 'lightskyblue';
 		ctx.font = 'bolder 25px ubuntu'
 		ctx.moveTo(each[i] * dx, i* dy);	
 		ctx.fillText(arr[i],x - 4, y + 4);
 	}
 
 	async function create_graph() {
-		ctx.fillStyle = " #e6f0ff";
+		// ctx.fillStyle = "lightgreen";
+		ctx.fillStyle="rgb(58, 96, 115)"
 		ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height)
 		for(let i=0; i< size; i++) {
 			for(let j=i; j< size; j++) {
@@ -232,11 +237,11 @@
 			}	
 		}
 		for(let i=0; i< size; i++) {
-			createBox(i, "#66a3ff");
+			createBox(i, "black");
 		}
 
 		for(let i=0; i< size; i++) {
-			createText(i, "white");
+			createText(i, "lightskyblue");
 		}
 		ctx.fillStyle = "lightgreen"
 	}

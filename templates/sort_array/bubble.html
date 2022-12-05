@@ -2,27 +2,29 @@
 <html>
 <head>
 	<title>Bubble Sort</title>
+	<link rel="icon" href="../../images/dmc.ico">
 	<style>
 		html, * {
 			box-sizing: border-box;
 			margin: 0;
 			padding: 0;
-	
 		}
 
 		body {
 			text-align: center;
+			background: url("../../images/dmcbg.png");
 		}
 
 		.grid {
 			width: 1000px;
 			position: relative;
 			height: 400px;
-			background: #e6f0ff;
 			margin: 40px auto;
 			display: flex;
 			flex-wrap: wrap;
-			outline: 1px solid red;
+			outline: 1px solid blue;
+			/* opacity: 0.5;
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%); */
 		}
 
 		p, p:nth-child(1) {
@@ -30,8 +32,10 @@
 			text-align: center;
 			font-family: ubuntu;
 			font-weight: bolder;
-			font-size: 20px;
-			color: lightskyblue;
+			font-size: 22px;
+			background: linear-gradient(to right, #1cb5e0 0%, #000851);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
 		}
 
 		.arr__controllers {
@@ -43,6 +47,10 @@
 
 		.arr__delete, .arr__insert, .arr__search {
 			padding: 10px 30px;
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
+			color: lightseagreen;
+			font-size: 0.9rem;
+			border-radius: 5px;
 		}
 
 		.arr__peek__input {
@@ -76,10 +84,11 @@
 
 		.insert__details {
 			display: flex;
-			justify-content: center;
-			align-self: center;
-			padding: 20px;
-			background: lightgreen;
+    		justify-content: center;
+    		align-self: center;
+    		padding: 20px;
+    		/* background: #34312e; */
+    		background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
 		}
 		.insert__details > * {
 			padding: 10px;
@@ -87,7 +96,7 @@
 
 		.insert__details label {
 			font-weight: bold;
-			color: red;
+			color: lightskyblue;
 		}
 
 		.insert__submit > button, .insert__details input, .delete__submit > button {
@@ -95,10 +104,14 @@
 		}
 
 		.arr__visualize {
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
+			color: lightseagreen;
 			padding : 10px;
 		}
 
 		.arr__controllers > select {
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
+			color: lightseagreen;
 			padding: 10px;
 		}
 

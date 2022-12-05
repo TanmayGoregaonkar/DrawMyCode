@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Flood Fill</title>
+	<link rel="icon" href="../../images/dmc.ico">
+
 	<style>
 		html, * {
 			box-sizing: border-box;
@@ -11,10 +13,12 @@
 
 		body {
 			text-align: center;
+			background: url("../../images/dmcbg.png");
 		}
 
 		.grid {
-			background:  #e6f0ff;
+			background: linear-gradient(160deg, rgb(58, 96, 115), rgb(22, 34, 42) 100%);
+			opacity: 0.5;
 			margin: auto;
 			border: 2px solid black;
 		}
@@ -26,7 +30,10 @@
 			font-weight: bolder;
 			font-size: 25px;
 			text-transform: uppercase;
-			color: lightskyblue;
+			
+			background: linear-gradient(to right, #1cb5e0 0%, #000851);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
 		}
 
 		.find {
